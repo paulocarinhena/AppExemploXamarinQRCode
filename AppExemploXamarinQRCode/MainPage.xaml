@@ -7,7 +7,7 @@
              x:Class="AppExemploXamarinQRCode.MainPage">
 
     <StackLayout>
-        <Label x:Name="LblQrCode" Text="Welcome to Xamarin.Forms! By:Thallison Rhanniel"
+        <Label x:Name="LblQrCode" Text="Aplicativo de Leitura de QrCode! By:Paulo Carinhena"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         <Button Text="Scanner" Clicked="Button_Clicked"></Button>
