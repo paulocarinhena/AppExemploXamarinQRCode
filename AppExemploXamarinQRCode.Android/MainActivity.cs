@@ -19,6 +19,9 @@ namespace AppExemploXamarinQRCode.Droid
             MobileBarcodeScanner.Initialize(this.Application);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+            //colocando pacote de material (Estilizar)
+            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+
             //Inicializando form com progresso de camera
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

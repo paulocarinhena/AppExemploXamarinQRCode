@@ -10,7 +10,9 @@
         <Label x:Name="LblQrCode" Text="Aplicativo de Leitura de QrCode! By:Paulo Carinhena"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        <Button Text="Scanner" Clicked="Button_Clicked"></Button>
+        <Button Text="Ler QrCode" Clicked="Button_Clicked" Visual="Material"></Button>
+        
+        
     </StackLayout>
 
 </ContentPage>

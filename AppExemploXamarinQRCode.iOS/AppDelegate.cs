@@ -20,6 +20,7 @@ namespace AppExemploXamarinQRCode.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             global::ZXing.Net.Mobile.Forms.iOS.Platform.Init(); // <<-- Adicionando linha de leitura do Zxing.
+            global::Xamarin.Forms.FormsMaterial.Init(); // <<-- estilo Material
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
