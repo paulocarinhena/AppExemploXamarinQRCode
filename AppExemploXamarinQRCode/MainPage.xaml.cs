@@ -17,8 +17,7 @@ namespace AppExemploXamarinQRCode
         }
 
         //ação do Button
-        private async void Button_Clicked(object sender, EventArgs e) => await OpenScan();
-      
+        private async void Button_Clicked(object sender, EventArgs e) => await OpenScan();     
 
         //Executa a varredura com a camera aberta
         private async Task OpenScan()
@@ -32,9 +31,7 @@ namespace AppExemploXamarinQRCode
 
                 //alterando o Label com o conteudo do QRCode
                 LblQrCode.Text = QrCode;
-
             }
         }
-
     }
 }
