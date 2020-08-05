@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Runtime;
+using ZXing.Mobile;
 
 namespace AppExemploXamarinQRCode.Droid
 {
@@ -16,17 +14,20 @@ namespace AppExemploXamarinQRCode.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
 
+            MobileBarcodeScanner.Initialize(this.Application);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+            //Inicializando form com progresso de camera
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+            //Adicioinando Permissão
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }

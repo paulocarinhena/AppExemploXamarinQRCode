@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppExemploXamarinQRCode.Service;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,5 +15,26 @@ namespace AppExemploXamarinQRCode
         {
             InitializeComponent();
         }
+
+        //ação do Button
+        private async void Button_Clicked(object sender, EventArgs e) => await OpenScan();
+      
+
+        //Executa a varredura com a camera aberta
+        private async Task OpenScan()
+        {
+            var scanner = DependencyService.Get<IQrCodeScanningService>();
+            var result = await scanner.ScanAsync();
+            if (!string.IsNullOrEmpty(result))
+            {
+               //pegando os dados do qrCode
+                var QrCode = result;
+
+                //alterando o Label com o conteudo do QRCode
+                LblQrCode.Text = QrCode;
+
+            }
+        }
+
     }
 }

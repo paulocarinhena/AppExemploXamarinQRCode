@@ -16,6 +16,9 @@ using Android.App;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 
+
+// Adicionando acesso a camera.
+[assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
